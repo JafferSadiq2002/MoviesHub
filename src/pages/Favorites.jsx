@@ -5,7 +5,6 @@ import MovieCard from '../components/MovieCard';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.favorites.favoriteMovies)
-  console.log(favorites)
   return (
     <>
       <Header />

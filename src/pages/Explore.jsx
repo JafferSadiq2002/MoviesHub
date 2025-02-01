@@ -101,7 +101,7 @@ const Explore = () => {
         <>
           <h2 className='text-center text-gray-400 text-lg mb-3'>Your Search Results</h2>
           <ul className='list-none w-full h-full flex flex-wrap overflow-auto  scrollbar-hide gap-3'>
-            {searchedMovies.map((eachMovie) => <MovieCard movie ={eachMovie} key={eachMovie.imdbId}  />)}
+            {searchedMovies.map((eachMovie) => <MovieCard movie ={eachMovie} key={eachMovie.imdbID}  />)}
           </ul>
         </>
       )
