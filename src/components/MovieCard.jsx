@@ -27,12 +27,12 @@ const MovieCard = (props) => {
 
 
   return (
-    <Link to={`/movie/${imdbID}`}>
-      <li className='bg-black p-0 hover:h-[330px] hover:w-[190px] hover:duration-250   text-white w-[180px] h-[320px] shrink-0 rounded-b-[5px]'>
-        <img src={Poster} className='h-[220px] w-full' />
-        <div className='flex justify-between p-2'>
-          <p className='font-semibold text-sm '>{Title}</p>
-          <button className=' p-0 self-start' onClick={toggleFavorite}>
+    <Link className='duration-500' to={`/movie/${imdbID}`}>
+      <li className='bg-black p-0 rounded-2xl shadow-md shadow-amber-300 hover:scale-103 hover:duration-200 hover:shadow-2xl hover:border-2 hover:border-amber-200  text-white w-[180px] h-[350px] shrink-0 '>
+        <img src={Poster} className='h-[250px] w-full rounded-2xl' />
+        <div className='flex justify-between p-2 mt-3'>
+          <p className='font-semibold text-[12px] '>{Title}</p>
+          <button className=' p-0 self-start active:h-9 m-2 ' onClick={toggleFavorite}>
             {favoriteIcon}
           </button>
           

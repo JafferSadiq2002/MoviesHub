@@ -12,6 +12,7 @@ const Home = () => {
     const [isLoading,setIsLoading] = useState(true)
     useEffect(() => {
       const getTopMovies = async () => {
+        
           const topRatedMovies = await fetchMovies('movies')
           const actionMovies = await fetchMovies('action')
           const comedyMovies = await fetchMovies('comedy')
@@ -36,9 +37,9 @@ const Home = () => {
     }
 
       return (
-        <div className='max-h-[100vh] flex flex-col '>
+        <div className='max-h-[100vh] flex flex-col'>
           <Header />
-          <div className='bg-[#343642] text-white text-xl font-bold min-h-[89vh] max-w-[100vw]  p-[10px] box-border overflow-auto scrollbar-hide'>
+          <div className='bg-gradient-to-b from-gray-900 to-black   text-white text-xl font-bold min-h-[89vh] max-w-[100vw]  p-[10px] box-border overflow-auto scrollbar-hide'>
             <div>
               <h2>Top Rated</h2>
               {isLoading ? loader() :

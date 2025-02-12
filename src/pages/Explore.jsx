@@ -100,7 +100,7 @@ const Explore = () => {
       return(
         <>
           <h2 className='text-center text-gray-400 text-lg mb-3'>Your Search Results</h2>
-          <ul className='list-none w-full h-full flex flex-wrap overflow-auto  scrollbar-hide gap-3'>
+          <ul className='list-none w-full h-full md:p-5 flex items-center flex-wrap overflow-auto  scrollbar-hide gap-3 md:gap-7'>
             {searchedMovies.map((eachMovie) => <MovieCard movie ={eachMovie} key={eachMovie.imdbID}  />)}
           </ul>
         </>
@@ -153,7 +153,7 @@ const Explore = () => {
           }
         </div>
       </div>
-      <div className='bg-[#343642] max-w-[100vw] min-h-[92vh] p-5 box-border'>
+      <div className='bg-gradient-to-b from-[#121212] to-[#1e1e1e]  max-w-[100vw] min-h-[92vh] p-5 box-border'>
          <div className='w-[90%] mx-auto flex items-center gap-4'>
            <input type='search' value={selectedFilter} onChange={(e) => setSelectedFilter(e.target.value)} placeholder='Search Movie, Series etc...' className='border-amber-50 text-amber-100 border-2 h-10 rounded-2xl w-[80%] outline-none p-4 '  />
            <FaSearch  className='text-white text-3xl' onClick={onClickSearch} />

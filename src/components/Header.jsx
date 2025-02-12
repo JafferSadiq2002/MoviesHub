@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <>
-    <div className='show-case flex justify-end w-full h-full fixed duration-500' style={{
+    <div className='show-case flex justify-end w-full h-full fixed duration-500 z-1000' style={{
         visibility : showMenu ? 'visible' : 'hidden',
         opacity  : showMenu ? 1 : 0
       }} onClick={() => {setShowMenu(false)}}>
@@ -57,17 +57,17 @@ const Header = () => {
           </nav>
         </div>
       </div>
-    <header className='p-[10px] bg-black h-[20%] '>
+    <header className='p-[10px] bg-gray-900/90 backdrop-blur-lg shadow-lg h-[20%] '>
       <div className='flex items-center  max-w-[1200px] mx-auto'>
         <Link to ='/'>
-           <h1 className='text-2xl text-amber-700 font-bold tracking-tighter'>MOVIESHUB</h1>
+           <h1 className='text-2xl text-red-500 font-bold tracking-tighter'>MOVIESHUB</h1>
         </Link>
         <GiHamburgerMenu className=' ml-auto text-white md:hidden' onClick={() => (setShowMenu(true))} size={30} />
         <div className='ml-auto hidden md:flex'>
           <nav className='flex items-center gap-5 '>
             {navLinks.map((eachLink) => {
               return(
-                <li className='text-white list-none hover:text-lg hover:duration-200 hover:border-b-3 hover:border-amber-700' key={eachLink.id}>
+                <li className='text-white list-none hover:text-red-500 hover:text-lg hover:duration-200 hover:border-b-3 transition hover:border-amber-700' key={eachLink.id}>
                     <Link to ={eachLink.path} className='text-md flex items-center gap-2'>
                         {eachLink.icon}
                         {eachLink.text}

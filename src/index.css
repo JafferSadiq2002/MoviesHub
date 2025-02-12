@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+body{
+  overflow: hidden;
+}
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Hides the scrollbar on WebKit browsers */
 }
@@ -9,4 +12,30 @@
 }
 .show-case{
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.favorite-button {
+  background: linear-gradient(135deg, #4a90e2, #007aff);
+  border: none;
+  padding: 12px 20px;
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.favorite-button:hover {
+  background: linear-gradient(135deg, #007aff, #0056b3);
+  transform: scale(1.05);
+}
+.favorite-icon {
+  color: white;
+  font-size: 18px;
 }
