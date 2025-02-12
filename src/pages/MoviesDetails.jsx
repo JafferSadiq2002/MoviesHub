@@ -93,7 +93,7 @@ const MoviesDetails = () => {
       }}>
         {isLoading ? loader() : (
            <>
-            <div className=' border-amber-100 w-[90%] h-[80%] mb-5 '>
+            <div className=' border-amber-100 w-[90%] h-[80%] mb-5 mt-5 '>
               {showMovieDetails()}
             </div>
             <div className='mt-12 mb-12'>
