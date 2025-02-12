@@ -37,13 +37,14 @@ const MoviesDetails = () => {
   }
   
   useEffect(() => {
+     setIsLoading(true)
      const getMovieDetails = async () => {
          const movieDetailsObject = await fetchMoviesDetails(id)
          setIsLoading(false)
          setMovieDetails(movieDetailsObject)
      }
      getMovieDetails()
-  },[])
+  },[id])
   useEffect(() => {
     
     const getSimilerMovies = async (similarGenre) => {
@@ -87,7 +88,7 @@ const MoviesDetails = () => {
     <div className='max-h-[100vh] flex flex-col'>
     
       <Header />
-      <div className='bg-cover min-h-[100vh] pl-2 pt-4 md:pl-8 md:pt-8   overflow-auto scrollbar-hide'
+      <div className='bg-cover min-h-[100vh] pl-4 pt-4 md:pl-8 md:pt-8   overflow-auto scrollbar-hide'
       style={{
          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), black), url(${Poster})`
       }}>
@@ -97,7 +98,7 @@ const MoviesDetails = () => {
               {showMovieDetails()}
             </div>
             <div className='mt-12 mb-12'>
-               <h2 className='text-white font-bold text-2xl'>Similer Movies</h2>
+               <h2 className='text-white font-bold text-3xl'>Similer Movies</h2>
                <ul className='list-none mt-8 p-0 pt-2 pb-16 flex flex-wrap gap-3 md:gap-7'>
                   {
                     similarMovies ? (
