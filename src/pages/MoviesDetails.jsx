@@ -29,7 +29,7 @@ const MoviesDetails = () => {
       };
   const loader = () => {
     return(
-      <div className=' w-[80vw]  h-[80vh]  flex justify-center items-center'>
+      <div className=' w-[90vw]  h-[80vh]  flex justify-center items-center'>
          <ThreeDots color='#ffffff' className='w-2' /> 
       </div>
       
@@ -87,7 +87,7 @@ const MoviesDetails = () => {
     <div className='max-h-[100vh] flex flex-col'>
     
       <Header />
-      <div className='bg-cover min-h-[100vh] p-2 md:p-8   overflow-auto scrollbar-hide'
+      <div className='bg-cover min-h-[100vh] pl-2 pt-4 md:pl-8 md:pt-8   overflow-auto scrollbar-hide'
       style={{
          backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), black), url(${Poster})`
       }}>
