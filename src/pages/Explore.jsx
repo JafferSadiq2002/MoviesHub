@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import { FaSearch } from "react-icons/fa";
 import { IoFilterOutline } from "react-icons/io5";
@@ -151,7 +151,7 @@ const Explore = () => {
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className="h-full w-[40%] md:w-[20%] bg-white absolute z-10 duration-[400ms] p-8 pb-20 overflow-auto"
+          className="h-full w-[40%] md:w-[20%] bg-white absolute z-10 duration-[400ms] p-8 pb-20   overflow-auto"
           style={{
             right: showFilters ? "0%" : "-100%",
           }}
@@ -162,6 +162,7 @@ const Explore = () => {
                 id={eachGenre.id}
                 className=" cursor-pointer hover:text-blue-700 hover:scale-105 duration-300 transform mb-4  list-none text-lg font-semibold "
                 onClick={onSelectFilter}
+                key={eachGenre.id}
               >
                 {eachGenre.text}
               </li>

@@ -1,34 +1,37 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import profileLogo from "../assets/profileLogo.png";
 import { MdHomeFilled } from "react-icons/md";
 import { MdOutlineFavorite } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-
+const navLinks = [
+  {
+    id: 1,
+    icon: <MdHomeFilled />,
+    text: "Home",
+    path: "/",
+  },
+  {
+    id: 2,
+    icon: <MdOutlineFavorite />,
+    text: "Favorites",
+    path: "/favorites",
+  },
+  {
+    id: 3,
+    icon: <FaSearch />,
+    text: "Explore",
+    path: "/explore",
+  },
+];
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const navLinks = [
-    {
-      id: 1,
-      icon: <MdHomeFilled />,
-      text: "Home",
-      path: "/",
-    },
-    {
-      id: 2,
-      icon: <MdOutlineFavorite />,
-      text: "Favorites",
-      path: "/favorites",
-    },
-    {
-      id: 3,
-      icon: <FaSearch />,
-      text: "Explore",
-      path: "/explore",
-    },
-  ];
-
+  const [isActive, setIsActive] = useState(navLinks[0].id);
+  const onSelectNavLinks = (id) => {
+    setShowMenu(false);
+    setIsActive(id);
+  };
   return (
     <>
       <div
@@ -54,9 +57,14 @@ const Header = () => {
             {navLinks.map((eachLink) => {
               return (
                 <li
-                  className="text-black list-none hover:text-lg hover:duration-200 hover:border-b-3 hover:border-amber-700"
+                  className={`text-black list-none hover:text-lg hover:duration-200 hover:border-b-3  hover:border-amber-700 transition ${
+                    isActive === eachLink.id
+                      ? "text-lg border-b-3 border-amber-700"
+                      : ""
+                  } `}
                   key={eachLink.id}
-                  onClick={() => setShowMenu(false)}
+                  id={eachLink.id}
+                  onClick={() => onSelectNavLinks(eachLink.id)}
                 >
                   <Link
                     to={eachLink.path}
@@ -88,8 +96,18 @@ const Header = () => {
               {navLinks.map((eachLink) => {
                 return (
                   <li
-                    className="text-white list-none hover:text-red-500 hover:scale-110 hover:duration-500 hover:border-b-3 transition hover:border-amber-700"
+                    className={`text-white hover:text-amber-700 list-none  hover:duration-500 hover:border-b-3 hover:scale-105 hover:border-amber-700 transition `}
+                    style={{
+                      transition: "all 0.3s",
+                      cursor: "pointer",
+                      isActive:
+                        isActive === eachLink.id
+                          ? "text-lg border-b-3 border-amber-700"
+                          : "",
+                    }}
                     key={eachLink.id}
+                    id={eachLink.id}
+                    onClick={() => onSelectNavLinks(eachLink.id)}
                   >
                     <Link
                       to={eachLink.path}
